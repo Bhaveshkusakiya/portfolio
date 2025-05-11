@@ -1,0 +1,151 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9fc;
+    color: #333;
+    scroll-behavior: smooth;
+  }
+  
+  header {
+    background-color: #1e90ff;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background: white;
+    color: #1e90ff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+  }
+  
+  .hamburger {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    display: block;
+  }
+  
+  nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    z-index: 100;
+    text-align: right;
+  }
+  
+  nav.active {
+    display: block;
+  }
+  
+  nav a {
+    display: block;
+    margin: 10px 0;
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .socials a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+  }
+  
+  section {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  h2 {
+    color: #1e90ff;
+    border-bottom: 2px solid #1e90ff;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  
+  .project, .skill-list, .fade-in {
+    background: #fff;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .project a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 0.5rem 0;
+  }
+  
+  footer {
+    background-color: #1e90ff;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    font-weight: 300;
+  }
+  
+  /* Responsive */
+  @media screen and (min-width: 768px) {
+    .hamburger {
+      display: none;
+    }
+  
+    nav {
+      display: flex !important;
+      position: static;
+      justify-content: center;
+      background: none;
+      box-shadow: none;
+      padding: 0;
+    }
+  
+    nav a {
+      margin: 0 15px;
+      color: #fff;
+    }
+  }
+  
