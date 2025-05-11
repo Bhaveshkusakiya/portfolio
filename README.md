@@ -52,3 +52,4 @@ This website showcases my projects, skills, certifications, and contact informat
 > Thank you for visiting my portfolio! Feel free to reach out if you have any exciting opportunities or collaborations.
 
 ---
+
