@@ -324,3 +324,20 @@ footer{text-align:center;padding:2.5rem 0;background:var(--accent2);color:#fff}
     max-width: 360px;
   }
 }
+
+/* ===== Global: stop accidental sideways scroll ===== */
+html, body{
+  max-width: 100%;
+  overflow-x: hidden;   /* lock horizontal scrolling */
+}
+
+/* ===== Extra safeguard for very small phones ===== */
+@media (max-width: 420px){
+  /* keep the blob inside the viewport */
+  .blob{
+    width: 120vw;          /* shrink vs. 750px */
+    max-width: 600px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
