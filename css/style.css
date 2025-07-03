@@ -298,3 +298,29 @@ footer{text-align:center;padding:2.5rem 0;background:var(--accent2);color:#fff}
   opacity:0;transform:translateY(8px);transition:.45s ease;
 }
 #botGreeter.show .bot-speech{opacity:1;transform:translateY(0)}
+
+/* ==== Mobile safeguard (≤ 420 px) =========================== */
+@media (max-width: 420px){
+  /* reposition + shrink the floating bot */
+  #aiBtn{
+    right: 12px;
+    bottom: 12px;
+    width: 46px;
+    height: 46px;
+    font-size: 1.25rem;
+  }
+
+  /* keep the greeter bubble on‑screen too */
+  #botGreeter{
+    right: 72px;              /* 12 px + 46 px + a little gap */
+    bottom: 14px;
+  }
+
+  /* make the chat modal fit small screens */
+  .ai-modal{
+    right: 8px;
+    left: 8px;                /* center it */
+    width: auto;              /* 100% minus the 16 px side padding */
+    max-width: 360px;
+  }
+}
