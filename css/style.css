@@ -1,0 +1,300 @@
+/* ─── Design Tokens ───────────────────────────── */
+:root{
+  /* Light mode */
+  --bg:#f9fafb;
+  --bg-alt:#eef2ff;
+  --glass:rgba(255,255,255,0.55);
+  --text:#0f172a;
+  --accent1:#06b6d4;     /* neon cyan  */
+  --accent2:#7c3aed;     /* neon purple*/
+  --shadow:0 10px 40px rgba(0,0,0,.08);
+}
+body.dark{
+  --bg:#0f172a;
+  --bg-alt:#152033;
+  --glass:rgba(15,23,42,0.55);
+  --text:#e2e8f0;
+  --shadow:0 10px 40px rgba(0,0,0,.4);
+}
+
+/* ─── Base Reset ─────────────────────────────── */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Space Grotesk',sans-serif;
+  line-height:1.6;
+  background:var(--bg);
+  color:var(--text);
+  transition:background .4s,color .4s;
+}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+.container{max-width:1150px;margin:auto;padding:0 1.25rem}
+
+/* ─── Glass Helper ───────────────────────────── */
+.glass{backdrop-filter:blur(12px);background:var(--glass)}
+
+/* ─── Navbar ─────────────────────────────────── */
+.navbar{
+  position:sticky;top:0;z-index:999;padding:.6rem 0;
+  box-shadow:0 2px 12px rgba(0,0,0,.04);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{
+  font-weight:700;font-size:1.6rem;
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  -webkit-background-clip:text;color:transparent
+}
+#burger{display:none;font-size:1.6rem;background:none;border:none;color:var(--text)}
+.nav{display:flex;align-items:center;gap:1.5rem}
+.nav a{position:relative;font-weight:500}
+.nav a::after{
+  content:\"\";position:absolute;left:0;bottom:-4px;width:0;height:2px;
+  background:var(--accent2);transition:.3s
+}
+.nav a:hover::after{width:100%}
+.btn-resume{
+  padding:.45rem 1rem;border-radius:26px;font-weight:600;
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:#fff
+}
+
+/* Mobile nav */
+@media(max-width:825px){
+  #burger{display:block}
+  .nav{
+    position:fixed;inset:0 0 0 auto;width:260px;
+    flex-direction:column;padding:5rem 1.4rem;gap:1.6rem;
+    transform:translateX(100%);transition:.4s;
+    box-shadow:-6px 0 24px rgba(0,0,0,.15);
+    background:var(--bg)
+  }
+  .nav.open{transform:translateX(0)}
+}
+
+/* ─── Hero ───────────────────────────────────── */
+.hero{position:relative;padding:7rem 0;text-align:center;overflow:hidden}
+.blob{
+  position:absolute;left:50%;top:55%;width:750px;height:750px;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle at 30% 30%,var(--accent1),var(--accent2) 70%);
+  filter:blur(140px);opacity:.35;pointer-events:none;
+  animation:blob 12s ease-in-out infinite alternate;
+}
+@keyframes blob{
+  0%{transform:translate(-50%,-50%) scale(1)}
+  50%{transform:translate(-50%,-60%) scale(1.1)}
+  100%{transform:translate(-50%,-50%) scale(.9)}
+}
+.grad{
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  -webkit-background-clip:text;color:transparent
+}
+.typed-sub{margin:.8rem 0 2.2rem;font-size:1.15rem;font-weight:300}
+.cta-row{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn{
+  padding:.75rem 1.4rem;border-radius:34px;font-weight:600;
+  transition:transform .25s ease
+}
+.primary{
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  color:#fff
+}
+.ghost{
+  border:2px solid var(--accent2);
+  color:var(--accent2)
+}
+.btn:hover{transform:translateY(-4px)}
+
+/* ─── Sections ──────────────────────────────── */
+.section{padding:5rem 0}
+.section.alt{background:var(--bg-alt)}
+.title{
+  font-size:1.9rem;font-weight:600;margin-bottom:2rem;
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  -webkit-background-clip:text;color:transparent
+}
+.lead{max-width:800px;font-size:1.05rem}
+
+/* ─── Timeline (Experience) ─────────────────── */
+.timeline{border-left:2px solid var(--accent2);margin-left:.5rem}
+.timeline-item{display:flex;gap:1.4rem;margin-bottom:2.8rem}
+.timeline-item .dot{
+  width:14px;height:14px;border-radius:50%;
+  background:var(--accent2);margin-left:-8px;flex:none;transform:translateY(6px)
+}
+.content h3{margin:0;font-size:1.2rem;font-weight:600}
+.content .company{font-weight:500;color:var(--accent1)}
+.content time{display:block;margin:.3rem 0 .8rem;color:var(--accent1);font-size:.85rem}
+.content ul{padding-left:1.2rem;margin:0}
+.content li{margin-bottom:.4rem}
+
+/* ─── Project Spotlight ─────────────────────── */
+.proj-line{display:flex;gap:1.7rem;margin-bottom:3rem;align-items:flex-start}
+.proj-line img{
+  width:160px;height:110px;object-fit:cover;border-radius:12px;
+  box-shadow:var(--shadow)
+}
+.info h3{margin:0;font-size:1.3rem;font-weight:600}
+.info p{margin:.45rem 0}
+.stack{font-size:.85rem;color:var(--accent1);margin-bottom:.4rem}
+.info a{font-weight:600;color:var(--accent2)}
+.info a:hover{text-decoration:underline}
+
+/* Mobile project layout */
+@media(max-width:650px){
+  .proj-line{flex-direction:column}
+  .proj-line img{width:100%;height:190px}
+}
+
+/* ─── Skills Heatmap ────────────────────────── */
+.skill-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+  gap:.9rem
+}
+.skill-grid span{
+  padding:.65rem .9rem;
+  background:var(--glass);
+  border-radius:10px;
+  text-align:center;
+  font-size:.85rem;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  transition:transform .3s,box-shadow .3s
+}
+.skill-grid span:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 28px rgba(0,0,0,.18)
+}
+
+/* ─── Plain Timeline (education/certs) ─────── */
+.timeline-plain{list-style:none;padding:0;margin:0}
+.timeline-plain li{margin-bottom:.9rem}
+.timeline-plain li span{font-weight:600;color:var(--accent1)}
+
+/* ─── Contact Links ─────────────────────────── */
+.contact-links{display:flex;flex-wrap:wrap;gap:1.4rem;font-weight:600}
+.contact-links a:hover{color:var(--accent2)}
+
+/* ─── Footer ────────────────────────────────── */
+footer{text-align:center;padding:2.5rem 0;background:var(--accent2);color:#fff}
+
+/* ─── Utility ───────────────────────────────── */
+.tilt{will-change:transform}
+
+/* ── AI Assistant Button ────────────────────── */
+#aiBtn{
+  position:fixed;right:22px;bottom:22px;z-index:1000;
+  width:54px;height:54px;border-radius:50%;border:none;
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  color:#fff;font-size:1.4rem;cursor:pointer;
+  box-shadow:0 8px 24px rgba(0,0,0,.25);transition:transform .3s;
+}
+#aiBtn:hover{transform:translateY(-4px)}
+
+/* ── AI Modal ───────────────────────────────── */
+.ai-modal{
+  position:fixed;right:24px;bottom:90px;z-index:1000;
+  width:320px;border-radius:18px;padding:1.2rem;display:none;
+  box-shadow:0 18px 40px rgba(0,0,0,.35);
+}
+.ai-modal.open{display:block;animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.ai-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem}
+.ai-header h4{margin:0;font-size:1.05rem;background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;color:transparent}
+#aiClose{cursor:pointer;font-size:1.1rem}
+
+.ai-body{min-height:80px;font-size:.95rem}
+.ai-footer{text-align:right;margin-top:1rem}
+
+
+/*  ── (everything above is unchanged) ─────────────────────────  */
+
+/* ===== AI Assistant Button ===== */
+#aiBtn{
+  position:fixed;right:22px;bottom:22px;z-index:1000;
+  width:54px;height:54px;border:none;border-radius:50%;
+  font-size:1.4rem;color:#fff;cursor:pointer;
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  box-shadow:0 8px 26px rgba(0,0,0,.35);transition:transform .3s;
+}
+#aiBtn:hover{transform:translateY(-4px)}
+
+/* ===== AI Modal ===== */
+.ai-modal{
+  position:fixed;right:24px;bottom:90px;z-index:1000;
+  width:330px;max-height:70vh;display:none;flex-direction:column;
+  padding:1rem 1.2rem;border-radius:18px;box-shadow:var(--shadow);
+}
+.ai-modal.open{display:flex;animation:fadeIn .35s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+.ai-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem}
+.ai-header h4{margin:0;font-size:1rem;background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;color:transparent}
+#aiClose{cursor:pointer;font-size:1.1rem}
+
+.ai-chat{
+  flex:1;overflow-y:auto;padding-right:.4rem;margin-bottom:.6rem;
+  display:flex;flex-direction:column;gap:.7rem;font-size:.9rem;
+}
+.ai-msg{padding:.55rem .8rem;border-radius:12px;max-width:90%}
+.ai-user{align-self:flex-end;background:var(--accent2);color:#fff}
+.ai-bot{align-self:flex-start;background:var(--glass)}
+
+.ai-input{display:flex;gap:.6rem}
+.ai-input input{
+  flex:1;padding:.55rem .8rem;border-radius:12px;border:none;
+  background:var(--glass);color:var(--text)
+}
+.ai-input button{
+  width:42px;height:42px;border-radius:50%;border:none;font-size:1.1rem;
+  background:var(--accent1);color:#fff;cursor:pointer
+}
+.ai-input button:hover{transform:translateY(-2px);transition:.25s}
+
+/* === Story Mode Timeline === */
+.story-timeline{
+  position:relative;padding-left:2px;margin-left:.5rem;border-left:2px solid var(--accent2)
+}
+.story-item{
+  position:relative;margin-bottom:3rem;opacity:0;transform:translateY(40px);
+  transition:all .7s ease-out
+}
+.story-item.visible{opacity:1;transform:translateY(0)}
+.story-item.left{padding-left:1.6rem}
+.story-item.right{padding-left:1.6rem;margin-left:1.6rem;border-left:none}
+.story-dot{
+  position:absolute;left:-9px;top:3px;width:14px;height:14px;border-radius:50%;
+  background:var(--accent2)
+}
+.story-item.right .story-dot{left:-25px}
+.year{
+  margin:0 0 .3rem;font-size:1.15rem;font-weight:600;
+  background:linear-gradient(90deg,var(--accent1),var(--accent2));
+  -webkit-background-clip:text;color:transparent
+}
+@media(max-width:640px){
+  .story-item.right{margin-left:0}
+}
+/* ── Robot Greeter ─────────────────────────── */
+#botGreeter{
+  position:fixed;right:96px;bottom:20px;z-index:1000;
+  display:flex;align-items:center;cursor:pointer;
+}
+.bot-emoji{font-size:46px;animation:botWave 4s ease-in-out infinite}
+@keyframes botWave{
+  0%,100%{transform:rotate(0deg)}
+  20%{transform:rotate(15deg)}
+  40%{transform:rotate(-12deg)}
+  60%{transform:rotate(12deg)}
+  80%{transform:rotate(-8deg)}
+}
+.bot-speech{
+  background:var(--glass);backdrop-filter:blur(6px);
+  color:var(--text);padding:.45rem .9rem;
+  margin-left:.6rem;border-radius:20px;
+  font-size:.85rem;white-space:nowrap;
+  opacity:0;transform:translateY(8px);transition:.45s ease;
+}
+#botGreeter.show .bot-speech{opacity:1;transform:translateY(0)}

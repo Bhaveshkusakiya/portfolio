@@ -1,126 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bhavesh Kusakiya | Data Scientist</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bhavesh Kusakiya · AI‑Era Portfolio</title>
+
+    <!-- Fonts & core stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Tiny libs -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.3/dist/vanilla-tilt.min.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
-<body>
 
-<header>
-  <div class="logo">BK</div>
+<body class="dark">
 
-  <!-- Hamburger icon -->
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <!-- ╔════════ NAVBAR ═════════╗ -->
+    <header class="navbar glass">
+        <div class="container nav-inner">
+            <a href="#" class="logo">BK</a>
 
-  <!-- Hidden nav menu -->
-  <nav id="navMenu">
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#certificates">Certificates</a>
-    <a href="#contact">Contact</a>
-  </nav>
+            <!-- Mobile burger -->
+            <button id="burger" aria-label="menu">☰</button>
 
-  <h1>Bhavesh Kusakiya</h1>
-  <p>Data Scientist | Machine Learning Enthusiast</p>
-  <div class="socials">
-    <a href="https://github.com/Bhaveshkusakiya" target="_blank">GitHub</a> |
-    <a href="https://www.linkedin.com/in/bhavesh-kusakiya-116a1b193" target="_blank">LinkedIn</a> |
-    <a href="mailto:bhaveshkusakiya04@gmail.com">Email</a>
-  </div>
-</header>
+            <!-- Nav links -->
+            <nav id="navLinks" class="nav">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#education">Education</a>
+                <a href="#certificates">Certificates</a>
+                <a href="#contact">Contact</a>
+                <a href="assets/BhaveshKusakiya_CV.pdf" target="_blank" class="btn-resume">RESUME</a>
+                <button id="themeToggle" aria-label="theme">🌓</button>
+            </nav>
+        </div>
+    </header>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p class="fade-in">I’m a Data Science graduate with hands-on experience in Machine Learning, Python, SQL, and Tableau. Passionate about transforming data into insights and building predictive models to solve real-world problems.</p>
-</section>
+    <!-- ╔════════ HERO ═════════╗ -->
+    <section id="hero" class="hero">
+        <div class="blob"></div>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="project fade-in">
-    <h3>Customer Churn Prediction</h3>
-    <p>Predicted churn with 85% accuracy using XGBoost, Random Forest and presented insights via Tableau dashboards.</p>
-    <p><strong>Tech Stack:</strong> Python, Scikit-Learn, Tableau</p>
-    <a href="https://github.com/Bhaveshkusakiya" target="_blank">View Project</a>
-  </div>
+        <div class="container hero-inner">
+            <h1>Hi, I’m <span class="grad">Bhavesh Kusakiya</span></h1>
+            <p class="typed-sub"><span id="typed"></span></p>
 
-  <div class="project fade-in">
-    <h3>Twitter Sentiment Analysis</h3>
-    <p>Classified sentiments of tweets using Logistic Regression and Naive Bayes on NLP-processed data.</p>
-    <p><strong>Tech Stack:</strong> Python, NLP, Matplotlib</p>
-    <a href="https://github.com/Bhaveshkusakiya" target="_blank">View Project</a>
-  </div>
+            <div class="cta-row">
+                <a href="#contact" class="btn primary">Let’s Talk</a>
+                <a href="assets/BhaveshKusakiya_CV.pdf" target="_blank" class="btn ghost">Download CV</a>
+            </div>
+        </div>
+    </section>
 
-  <div class="project fade-in">
-    <h3>E-commerce Sales Forecasting</h3>
-    <p>Forecasted sales using ARIMA and Prophet to help in planning and demand forecasting.</p>
-    <p><strong>Tech Stack:</strong> Python, Time Series, Prophet</p>
-    <a href="https://github.com/Bhaveshkusakiya" target="_blank">View Project</a>
-  </div>
-</section>
+    <!-- ╔════════ ABOUT ═════════╗ -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="title">About Me</h2>
+            <p class="lead">
+                I’m a mathematics‑graduate‑turned‑data‑scientist who translates messy
+                datasets into business‑changing intelligence. I thrive on
+                <strong>time‑series forecasting</strong>, <strong>NLP pipelines</strong>,
+                and data stories that spark action.
+            </p>
+        </div>
+    </section>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skill-list fade-in">
-    <p><strong>Languages:</strong> Python, R, SQL</p>
-    <p><strong>Machine Learning:</strong> Scikit-Learn, TensorFlow, PyTorch</p>
-    <p><strong>Visualization:</strong> Tableau, Power BI, Seaborn</p>
-    <p><strong>Tools:</strong> Pandas, NumPy, Excel</p>
-    <p><strong>Concepts:</strong> A/B Testing, Time Series, NLP</p>
-  </div>
-</section>
+    <!-- ╔════════ EXPERIENCE ═════════╗ -->
+    <section id="experience" class="section alt">
+        <div class="container">
+            <h2 class="title">Experience</h2>
 
-<section id="education">
-  <h2>Education</h2>
-  <ul class="fade-in">
-    <li><strong>2023 - 2024:</strong> Associate Degree – StarAgile</li>
-    <li><strong>2021 - 2023:</strong> MSc Mathematics – Mithibai College</li>
-    <li><strong>2018 - 2021:</strong> BSc Mathematics – G.N. Khalsa College</li>
-  </ul>
-</section>
+            <div class="timeline">
+                <!-- Remote Freelance -->
+                <div class="timeline-item">
+                    <span class="dot"></span>
+                    <div class="content">
+                        <h3>Freelance Data Scientist <span class="company">· Remote</span></h3>
+                        <time>May 2024 – Jan 2025</time>
+                        <ul>
+                            <li>Built end‑to‑end churn model, boosting retention 11%.</li>
+                            <li>Deployed automated ETL (Python + SQL) for weekly ops.</li>
+                            <li>Shipped Tableau dashboards adopted at C‑suite level.</li>
+                        </ul>
+                    </div>
+                </div>
 
-<section id="certificates">
-  <h2>Certificates</h2>
-  <ul class="fade-in">
-    <li>Python for Data Science — IBM</li>
-    <li>Machine Learning with Python — IBM</li>
-    <li>Machine Learning with R — IBM</li>
-    <li>Advanced Excel — Mithibai College</li>
-  </ul>
-</section>
+                <!-- Mithibai -->
+                <div class="timeline-item">
+                    <span class="dot"></span>
+                    <div class="content">
+                        <h3>Research Assistant <span class="company">· Mithibai College</span></h3>
+                        <time>Jul 2022 – Dec 2023</time>
+                        <ul>
+                            <li>Forecasted academic trends with ARIMA & Prophet.</li>
+                            <li>Published research; taught Python analytics workshops.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="contact">
-  <h2>Contact Me</h2>
-  <div class="fade-in">
-    <p>📞 <strong>Phone:</strong> <a href="tel:+918291247107">+91 8291247107</a></p>
-    <p>📧 <strong>Email:</strong> <a href="mailto:bhaveshkusakiya04@gmail.com">bhaveshkusakiya04@gmail.com</a></p>
-    <p>🌐 <strong>GitHub:</strong> <a href="https://github.com/Bhaveshkusakiya" target="_blank">Bhaveshkusakiya</a></p>
-    <p>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/bhavesh-kusakiya-116a1b193" target="_blank">LinkedIn Profile</a></p>
-  </div>
-</section>
+    <!-- ╔════════ PROJECTS ═════════╗ -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="title">Project Spotlight</h2>
 
-<footer>
-  <p>© 2025 Bhavesh Kusakiya | Made with ❤️</p>
-</footer>
+            <div class="proj-line">
+                <img src="assets/project-thumbs/health.webp" alt="Smart Health Tracker" class="tilt">
+                <div class="info">
+                    <h3>Smart Health Tracker</h3>
+                    <p>Flask app logging water, calories & sleep with live trend graphs.</p>
+                    <p class="stack">Flask · Pandas · Matplotlib</p>
+                    <a href="https://github.com/Bhaveshkusakiya/Smart-Health-Tracker" target="_blank">GitHub ↗︎</a>
+                </div>
+            </div>
 
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById("navMenu");
-    nav.classList.toggle("active");
-  }
+            <div class="proj-line">
+                <img src="assets/project-thumbs/loan.webp" alt="Loan Risk Analyzer" class="tilt">
+                <div class="info">
+                    <h3>Loan Risk Analyzer</h3>
+                    <p>Streamlit XGBoost model (AUC 0.91) with SHAP insights & batch upload.</p>
+                    <p class="stack">Python · XGBoost · Streamlit</p>
+                    <a href="https://github.com/Bhaveshkusakiya/Loan-Risk-Analyzer" target="_blank">GitHub ↗︎</a>
+                </div>
+            </div>
 
-  const faders = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  });
-  faders.forEach(fader => observer.observe(fader));
-</script>
+            <div class="proj-line">
+                <img src="assets/project-thumbs/churn.webp" alt="Customer Churn" class="tilt">
+                <div class="info">
+                    <h3>Customer Churn Prediction</h3>
+                    <p>85 % accurate model + Tableau dashboards guiding retention campaigns.</p>
+                    <p class="stack">Python · XGBoost · Tableau</p>
+                    <a href="https://github.com/Bhaveshkusakiya/churn_predictor" target="_blank">GitHub ↗︎</a>
+                </div>
+            </div>
+
+            <div class="proj-line">
+                <img src="assets/project-thumbs/twitter.webp" alt="Twitter Sentiment" class="tilt">
+                <div class="info">
+                    <h3>Twitter Sentiment Analysis</h3>
+                    <p>NLP pipeline classifying 10 k tweets in real‑time (82 % accuracy).</p>
+                    <p class="stack">Python · NLTK · Scikit‑Learn</p>
+                    <a href="https://github.com/Bhaveshkusakiya/smart-sentiment-analyzer" target="_blank">GitHub ↗︎</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╔════════ SKILLS ═════════╗ -->
+    <section id="skills" class="section alt">
+        <div class="container">
+            <h2 class="title">Skills Heatmap</h2>
+
+            <div class="skill-grid">
+                <span>Python</span><span>R</span><span>SQL</span><span>Pandas</span><span>NumPy</span>
+                <span>Scikit‑Learn</span><span>TensorFlow</span><span>PyTorch</span><span>Tableau</span>
+                <span>Power BI</span><span>Matplotlib</span><span>Seaborn</span><span>NLP</span>
+                <span>Time‑Series</span><span>A/B Testing</span><span>BigData</span><span>DataPipeline</span><span>Flask</span>
+                <span>Power BI</span><span>AI</span><span>HTML</span><span>CSS</span><span>JS</span><span>JSON</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ╔════════ STORY MODE TIMELINE ═════════╗ -->
+    <section id="story" class="section">
+        <div class="container">
+            <h2 class="title">My Journey</h2>
+
+            <div class="story-timeline">
+                <div class="story-item left">
+                    <span class="story-dot"></span>
+                    <h3 class="year">2018</h3>
+                    <p>🎓 BSc Mathematics begins at G.N. Khalsa College.<br>
+                        Discovered a passion for logic & patterns.</p>
+                </div>
+
+                <div class="story-item right">
+                    <span class="story-dot"></span>
+                    <h3 class="year">2021</h3>
+                    <p>🧠 Learned Python.<br>
+                        Built my first cricket‑stats script & plotted insights.</p>
+                </div>
+
+                <div class="story-item left">
+                    <span class="story-dot"></span>
+                    <h3 class="year">2022</h3>
+                    <p>🔬 Research Assistant @ Mithibai College.<br>
+                        Forecasted trends with ARIMA & Prophet; taught Python workshops.</p>
+                </div>
+
+                <div class="story-item right">
+                    <span class="story-dot"></span>
+                    <h3 class="year">2023</h3>
+                    <p>🚀 Earned StarAgile Data‑Science Certificate & launched first Tableau dashboard.</p>
+                </div>
+
+                <div class="story-item left">
+                    <span class="story-dot"></span>
+                    <h3 class="year">2024</h3>
+                    <p>💼 Freelance Data Scientist (Remote).<br>
+                        Churn model boosted retention 11 %.</p>
+                </div>
+
+                <div class="story-item right">
+                    <span class="story-dot"></span>
+                    <h3 class="year">2025</h3>
+                    <p>🎯 Ready to join a data‑driven team & build the next AI success story.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ╔════════ EDUCATION / CERTS ═════════╗ -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="title">Education</h2>
+            <ul class="timeline-plain">
+                <li><span>2023–2024</span> Data Science Associate — StarAgile</li>
+                <li><span>2021–2023</span> MSc Mathematics — Mithibai College</li>
+                <li><span>2018–2021</span> BSc Mathematics — G.N. Khalsa College</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="certificates" class="section alt">
+        <div class="container">
+            <h2 class="title">Certificates</h2>
+            <ul class="timeline-plain">
+                <li>Python for Data Science — IBM</li>
+                <li>Machine Learning with Python — IBM</li>
+                <li>Machine Learning with R — IBM</li>
+                <li>Advanced Excel — Mithibai College</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ╔════════ CONTACT ═════════╗ -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="title">Contact</h2>
+            <div class="contact-links">
+                <a href="tel:+918291247107">📞 +91 82912 47107</a>
+                <a href="mailto:bhaveshkusakiya04@gmail.com">📧 bhaveshkusakiya04@gmail.com</a>
+                <a href="https://github.com/Bhaveshkusakiya" target="_blank">🌐 GitHub</a>
+                <a href="https://www.linkedin.com/in/bhavesh-kusakiya-116a1b193" target="_blank">🔗 LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 · Made with ❤️</p>
+    </footer>
+
+    <!-- Friendly robot greeter -->
+    <div id="botGreeter" aria-label="Chat with me">
+        <span class="bot-emoji">🤖</span>
+        <span id="botSpeech" class="bot-speech">Hi! Need anything? Just click me 👇</span>
+    </div>
+
+
+    <!-- Floating AI Assistant Button -->
+    <button id="aiBtn" aria-label="Why hire me?">🤖</button>
+
+    <!-- AI Chat Modal -->
+    <div id="aiModal" class="ai-modal glass">
+        <div class="ai-header">
+            <h4>Ask AI: “Why Hire Bhavesh?”</h4>
+            <span id="aiClose">✕</span>
+        </div>
+
+        <!-- Chat log -->
+        <div id="aiChat" class="ai-chat"></div>
+
+        <!-- Input -->
+        <form id="aiForm" class="ai-input">
+            <input id="aiQuestion" type="text" placeholder="Ask anything…" autocomplete="off" required />
+            <button type="submit">➤</button>
+        </form>
+    </div>
 
 </body>
+
 </html>
