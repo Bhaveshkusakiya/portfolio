@@ -267,3 +267,53 @@ html,body{max-width:100%;overflow-x:hidden}
     z-index:1002;            /* higher than .nav (which is 1000) */
   }
 }
+/* ─── Chat revamp patch 2025‑07‑04 ───────────────────────────── */
+
+/* fade‑in & slight slide for every bubble */
+@keyframes bubbleIn{
+  0%{opacity:0;transform:translateY(6px)}
+  100%{opacity:1;transform:translateY(0)}
+}
+.ai-msg{animation:bubbleIn .35s ease}
+
+/* Bot bubble — sleek neon‑glass */
+.ai-bot{
+  align-self:flex-start;
+  background:rgba(255,255,255,.07);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.08);
+  color:var(--text);
+}
+.ai-bot::before{
+  border-color:transparent rgba(255,255,255,.07) transparent transparent;
+}
+
+/* User bubble — diagonal gradient w/ slight glow */
+.ai-user{
+  align-self:flex-end;
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  box-shadow:0 4px 16px rgba(0,0,0,.25),0 0 8px var(--accent2);
+}
+.ai-user::before{
+  border-color:transparent transparent transparent var(--accent2);
+}
+
+/* Send button: circular, gradient, hover‑tilt */
+.ai-input button{
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  border:none;width:44px;height:44px;border-radius:50%;
+  font-size:1.15rem;color:#fff;cursor:pointer;
+  transition:transform .25s ease,box-shadow .25s ease;
+  box-shadow:0 3px 12px rgba(0,0,0,.25);
+}
+.ai-input button:hover{
+  transform:translateY(-2px) rotate(12deg);          /* paper‑plane tilt */
+  box-shadow:0 6px 20px rgba(0,0,0,.35),0 0 10px var(--accent2);
+}
+.ai-input button:active{transform:scale(.94) rotate(12deg)}
+
+/* Mobile: keep greeter on‑screen */
+@media(max-width:420px){
+  #botGreeter{right:12px;bottom:14px}
+}
