@@ -1,7 +1,22 @@
-/* ================== NAV: Burger Toggle ================== */
-const burger = document.getElementById('burger');
-const nav    = document.getElementById('navLinks');
-burger.addEventListener('click', () => nav.classList.toggle('open'));
+/* ================== NAV: Burger Toggle + Auto-Close ================== */
+const burger     = document.getElementById('burger');
+const burgerIcon = document.getElementById('burgerIcon');
+const nav        = document.getElementById('navLinks');
+
+function toggleMenu(){
+  nav.classList.toggle('open');
+  const open = nav.classList.contains('open');
+  burgerIcon.textContent = open ? '✕' : '☰';   // change icon
+}
+
+burger.addEventListener('click', toggleMenu);
+
+/* close menu when a nav link is tapped */
+nav.querySelectorAll('a').forEach(link=>{
+  link.addEventListener('click', () => {
+    if (nav.classList.contains('open')) toggleMenu();
+  });
+});
 
 /* ================== Theme Toggle ================== */
 const themeToggle = document.getElementById('themeToggle');
