@@ -257,3 +257,13 @@ html,body{max-width:100%;overflow-x:hidden}
 .story-item{margin-left:0!important;padding-left:1.6rem;border-left:none!important}
 .story-item.right{margin-left:0!important}
 .story-item .story-dot{left:-9px!important}
+
+/* === Mobile nav : keep burger/close icon clickable ================== */
+@media (max-width: 825px){
+  #burger{
+    position:fixed;          /* float over the panel */
+    top:18px;                /* match original offset */
+    right:22px;
+    z-index:1002;            /* higher than .nav (which is 1000) */
+  }
+}
