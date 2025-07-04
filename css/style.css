@@ -49,7 +49,7 @@ a{text-decoration:none;color:inherit}
 .nav{display:flex;align-items:center;gap:1.5rem}
 .nav a{position:relative;font-weight:500}
 .nav a::after{
-  content:\"\";position:absolute;left:0;bottom:-4px;width:0;height:2px;
+  content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;
   background:var(--accent2);transition:.3s
 }
 .nav a:hover::after{width:100%}
@@ -208,75 +208,19 @@ footer{text-align:center;padding:2.5rem 0;background:var(--accent2);color:#fff}
 .ai-body{min-height:80px;font-size:.95rem}
 .ai-footer{text-align:right;margin-top:1rem}
 
-
-/*  ── (everything above is unchanged) ─────────────────────────  */
-
-/* ===== AI Assistant Button ===== */
-#aiBtn{
-  position:fixed;right:22px;bottom:22px;z-index:1000;
-  width:54px;height:54px;border:none;border-radius:50%;
-  font-size:1.4rem;color:#fff;cursor:pointer;
-  background:linear-gradient(135deg,var(--accent1),var(--accent2));
-  box-shadow:0 8px 26px rgba(0,0,0,.35);transition:transform .3s;
-}
-#aiBtn:hover{transform:translateY(-4px)}
-
-/* ===== AI Modal ===== */
-.ai-modal{
-  position:fixed;right:24px;bottom:90px;z-index:1000;
-  width:330px;max-height:70vh;display:none;flex-direction:column;
-  padding:1rem 1.2rem;border-radius:18px;box-shadow:var(--shadow);
-}
-.ai-modal.open{display:flex;animation:fadeIn .35s ease}
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
-.ai-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem}
-.ai-header h4{margin:0;font-size:1rem;background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;color:transparent}
-#aiClose{cursor:pointer;font-size:1.1rem}
-
-.ai-chat{
-  flex:1;overflow-y:auto;padding-right:.4rem;margin-bottom:.6rem;
-  display:flex;flex-direction:column;gap:.7rem;font-size:.9rem;
-}
-.ai-msg{padding:.55rem .8rem;border-radius:12px;max-width:90%}
-.ai-user{align-self:flex-end;background:var(--accent2);color:#fff}
-.ai-bot{align-self:flex-start;background:var(--glass)}
-
-.ai-input{display:flex;gap:.6rem}
-.ai-input input{
-  flex:1;padding:.55rem .8rem;border-radius:12px;border:none;
-  background:var(--glass);color:var(--text)
-}
-.ai-input button{
-  width:42px;height:42px;border-radius:50%;border:none;font-size:1.1rem;
-  background:var(--accent1);color:#fff;cursor:pointer
-}
-.ai-input button:hover{transform:translateY(-2px);transition:.25s}
-
-/* === Story Mode Timeline === */
+/* === Story Mode Timeline (zig‑zag rules) === */
 .story-timeline{
   position:relative;padding-left:2px;margin-left:.5rem;border-left:2px solid var(--accent2)
 }
-.story-item{
-  position:relative;margin-bottom:3rem;opacity:0;transform:translateY(40px);
-  transition:all .7s ease-out
-}
+.story-item{position:relative;margin-bottom:3rem;opacity:0;transform:translateY(40px);transition:.7s ease-out}
 .story-item.visible{opacity:1;transform:translateY(0)}
 .story-item.left{padding-left:1.6rem}
 .story-item.right{padding-left:1.6rem;margin-left:1.6rem;border-left:none}
-.story-dot{
-  position:absolute;left:-9px;top:3px;width:14px;height:14px;border-radius:50%;
-  background:var(--accent2)
-}
+.story-dot{position:absolute;left:-9px;top:3px;width:14px;height:14px;border-radius:50%;background:var(--accent2)}
 .story-item.right .story-dot{left:-25px}
-.year{
-  margin:0 0 .3rem;font-size:1.15rem;font-weight:600;
-  background:linear-gradient(90deg,var(--accent1),var(--accent2));
-  -webkit-background-clip:text;color:transparent
-}
-@media(max-width:640px){
-  .story-item.right{margin-left:0}
-}
+.year{margin:0 0 .3rem;font-size:1.15rem;font-weight:600;background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;color:transparent}
+@media(max-width:640px){.story-item.right{margin-left:0}}
+
 /* ── Robot Greeter ─────────────────────────── */
 #botGreeter{
   position:fixed;right:96px;bottom:20px;z-index:1000;
@@ -292,52 +236,24 @@ footer{text-align:center;padding:2.5rem 0;background:var(--accent2);color:#fff}
 }
 .bot-speech{
   background:var(--glass);backdrop-filter:blur(6px);
-  color:var(--text);padding:.45rem .9rem;
-  margin-left:.6rem;border-radius:20px;
-  font-size:.85rem;white-space:nowrap;
-  opacity:0;transform:translateY(8px);transition:.45s ease;
+  color:var(--text);padding:.45rem .9rem;margin-left:.6rem;
+  border-radius:20px;font-size:.85rem;white-space:nowrap;opacity:0;
+  transform:translateY(8px);transition:.45s ease;
 }
 #botGreeter.show .bot-speech{opacity:1;transform:translateY(0)}
 
-/* ==== Mobile safeguard (≤ 420 px) =========================== */
-@media (max-width: 420px){
-  /* reposition + shrink the floating bot */
-  #aiBtn{
-    right: 12px;
-    bottom: 12px;
-    width: 46px;
-    height: 46px;
-    font-size: 1.25rem;
-  }
-
-  /* keep the greeter bubble on‑screen too */
-  #botGreeter{
-    right: 72px;              /* 12 px + 46 px + a little gap */
-    bottom: 14px;
-  }
-
-  /* make the chat modal fit small screens */
-  .ai-modal{
-    right: 8px;
-    left: 8px;                /* center it */
-    width: auto;              /* 100% minus the 16 px side padding */
-    max-width: 360px;
-  }
+/* ==== Mobile safeguard (≤ 420 px) ============ */
+@media (max-width:420px){
+  #aiBtn{right:12px;bottom:12px;width:46px;height:46px;font-size:1.25rem}
+  #botGreeter{right:72px;bottom:14px}
+  .ai-modal{right:8px;left:8px;width:auto;max-width:360px}
+  .blob{width:120vw;max-width:600px;left:50%;transform:translate(-50%,-50%);}
 }
 
 /* ===== Global: stop accidental sideways scroll ===== */
-html, body{
-  max-width: 100%;
-  overflow-x: hidden;   /* lock horizontal scrolling */
-}
+html,body{max-width:100%;overflow-x:hidden}
 
-/* ===== Extra safeguard for very small phones ===== */
-@media (max-width: 420px){
-  /* keep the blob inside the viewport */
-  .blob{
-    width: 120vw;          /* shrink vs. 750px */
-    max-width: 600px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
+/* ─── Journey alignment patch (single-column) ── */
+.story-item{margin-left:0!important;padding-left:1.6rem;border-left:none!important}
+.story-item.right{margin-left:0!important}
+.story-item .story-dot{left:-9px!important}
