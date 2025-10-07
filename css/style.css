@@ -317,3 +317,7 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(max-width:420px){
   #botGreeter{right:12px;bottom:14px}
 }
+
+.dark .section .proj-line .info .change {
+  color: #d5a1e6;
+}
