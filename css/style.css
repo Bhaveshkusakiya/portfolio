@@ -321,3 +321,15 @@ html,body{max-width:100%;overflow-x:hidden}
 .dark .section .proj-line .info .change {
   color: #d5a1e6;
 }
+
+.dark .section .container .lead .color {
+  color: #da95fa;
+}
+
+.dark .section .container .lead .color2 {
+  color: #eea072;
+}
+
+.dark .section .container .lead .color3 {
+  color: #f0829a;
+}
