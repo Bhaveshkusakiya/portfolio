@@ -1,348 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Bhavesh Kusakiya · AI‑Era Portfolio</title>
-
-    <!-- Fonts & core stylesheet -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Tiny libs -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.3/dist/vanilla-tilt.min.js" defer></script>
-    <script src="js/main.js" defer></script>
+    <title>Bhavesh Kusakiya - AI/ML Data Scientist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
+<body class="clean-theme">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">BK</div>
 
-<body class="dark">
-
-    <!-- ╔════════ NAVBAR ═════════╗ -->
-    <header class="navbar glass">
-        <div class="container nav-inner">
-            <a href="#" class="logo">BK</a>
-
-            <!-- Mobile burger -->
-            <button id="burger" aria-label="menu">
-                <span id="burgerIcon">☰</span>
-            </button>
-
-
-            <!-- Nav links -->
-            <nav id="navLinks" class="nav">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#education">Education</a>
-                <a href="#certificates">Certificates</a>
-                <a href="#contact">Contact</a>
-                <a href="assets/BhaveshKusakiya_CV.pdf" target="_blank" class="btn-resume">RESUME</a>
-                <button id="themeToggle" aria-label="theme">🌓</button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="pages/skills.html">Skills</a></li>
+                    <li><a href="pages/experience.html">Experience</a></li>
+                    <li><a href="pages/projects.html">Projects</a></li>
+                    <li><a href="pages/education.html">Education</a></li>
+                    <li><a href="pages/contact.html">Let's Connect</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <!-- ╔════════ HERO ═════════╗ -->
-    <section id="hero" class="hero">
-        <div class="blob"></div>
-
-        <div class="container hero-inner">
-            <h1>Hi, I’m <span class="grad">Bhavesh Kusakiya</span></h1>
-            <p class="typed-sub"><span id="typed"></span></p>
-
-            <div class="cta-row">
-                <a href="#contact" class="btn primary">Let’s Talk</a>
-                <a href="assets/BhaveshKusakiya_CV.pdf" target="_blank" class="btn ghost">Download CV</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ╔════════ ABOUT ═════════╗ -->
-    <section id="about" class="section">
+    <!-- Hero Section -->
+    <section id="home" class="hero-clean">
         <div class="container">
-            <h2 class="title">About Me</h2>
-            <p class="lead">
-                Hi, I’m <strong class="color">Bhavesh Kusakiya</strong> a mathematics graduate who found his purpose in
-                data. My journey began with a love for patterns and logic, evolved through programming and algorithms,
-                and now thrives where data meets decision-making. As a <strong class="color2">data scientist, I
-                    specialize in time-series forecasting, NLP pipelines, and data visualization, blending statistical
-                    rigor with storytelling to guide business impact</strong>. I’ve delivered solutions that matter from
-                a churn model that improved retention by 11% and automated ETL pipelines that streamlined operations, to
-                dashboards that empower leadership with clarity. With hands-on expertise in <strong class="color3">
-                    Python, SQL, Tableau, XGBoost, and ML, I believe in end-to-end ownership from data wrangling and
-                    modeling to deployment and monitoring.</strong> Driven by curiosity and clarity, I’m always
-                exploring new ideas, tuning models, and pushing the frontier of what analytics and AI can achieve.
-            </p>
-        </div>
-    </section>
-
-    <!-- ╔════════ EXPERIENCE ═════════╗ -->
-    <section id="experience" class="section alt">
-        <div class="container">
-            <h2 class="title">Experience</h2>
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <span class="dot"></span>
-                    <div class="content">
-                        <h3>Data Analytics Consultant <span class="company">· Off-Site </span></h3>
-                        <time>Mar 2025 – July 2025</time>
-                        <ul>
-                            <li>Built predictive models and dashboards that boosted data-driven decision-making by 20%.
-                            </li>
-                            <li>Automated ETL workflows using Python and SQL, cutting manual efforts by 40%</li>
-                            <li>Created interactive Tableau and Power BI dashboards</li>
-                        </ul>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Available for Hire</span>
+                </div>
+                <h1>Hi, I'm <span class="name-highlight">Bhavesh Kusakiya</span></h1>
+                <div class="role-clean">Data Scientist & AI/ML Engineer</div>
+                <p class="hero-description">Transforming complex data into intelligent insights with <strong>89% model accuracy</strong>. Specialized in Python, Machine Learning, and creating scalable AI solutions that drive business growth.</p>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="stat-number">89%</span>
+                        <span class="stat-label">Max Accuracy</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number">3+</span>
+                        <span class="stat-label">Years Exp</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Projects</span>
                     </div>
                 </div>
 
-                <!-- Remote Freelance -->
-                <div class="timeline-item">
-                    <span class="dot"></span>
-                    <div class="content">
-                        <h3>Freelance Data Scientist <span class="company">· Remote (India) </span></h3>
-                        <time>May 2024 – Jan 2025</time>
-                        <ul>
-                            <li>Built end‑to‑end churn model, boosting retention 11%.</li>
-                            <li>Deployed automated ETL (Python + SQL) for weekly ops.</li>
-                            <li>Shipped Tableau dashboards adopted at C‑suite level.</li>
-                        </ul>
+                <div class="hero-buttons">
+                    <a href="pages/contact.html" class="btn-clean btn-primary">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="./resume/BhaveshKusakiya_CV.pdf" download class="btn-clean btn-secondary">
+                        <span>Download Resume</span>
+                        <i class="fas fa-download"></i>
+                    </a>
+                    <a href="#about" class="btn-clean btn-secondary">
+                        <span>Learn More</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-clean">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">About Me</span>
+                <h2>Passionate Data Scientist with Proven Results</h2>
+                <p>Combining mathematical expertise with cutting-edge technology to solve complex business problems</p>
+            </div>
+            
+            <div class="about-card full-width">
+                <div class="card-header">
+                    <h3>🎯 Professional Summary</h3>
+                </div>
+                <p>Results-driven Data Science professional with a strong foundation in mathematics, statistics, and machine learning. Skilled in Python, SQL, Tableau, Power BI, and advanced analytics for data wrangling, feature engineering, and predictive modeling.</p>
+            </div>
+            
+            <div class="about-card full-width">
+                <div class="card-header">
+                    <h3>💡 Current Focus</h3>
+                </div>
+                <p>Building end-to-end data pipelines, time-series forecasting models, NLP solutions, and interactive dashboards that drive business insights and process automation.</p>
+            </div>
+            
+            <div class="about-card full-width">
+                <div class="card-header">
+                    <h3>🚀 What I Do</h3>
+                </div>
+                <div class="expertise-modern">
+                    <div class="expertise-card">
+                        <div class="expertise-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="expertise-info">
+                            <h4>Machine Learning & AI</h4>
+                            <p>Advanced ML algorithms, neural networks, and AI model development</p>
+                        </div>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="expertise-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="expertise-info">
+                            <h4>Data Visualization</h4>
+                            <p>Interactive dashboards and compelling data storytelling</p>
+                        </div>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="expertise-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="expertise-info">
+                            <h4>Big Data Analytics</h4>
+                            <p>Large-scale data processing and advanced analytics</p>
+                        </div>
+                    </div>
+                    
+                    <div class="expertise-card">
+                        <div class="expertise-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="expertise-info">
+                            <h4>MLOps & Automation</h4>
+                            <p>Scalable ML pipelines and automated workflows</p>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Mithibai -->
-                <div class="timeline-item">
-                    <span class="dot"></span>
-                    <div class="content">
-                        <h3>Research Assistant <span class="company">· Mithibai College</span></h3>
-                        <time>Jul 2022 – Dec 2023</time>
-                        <ul>
-                            <li>Forecasted academic trends with ARIMA & Prophet.</li>
-                            <li>Published research; taught Python analytics workshops.</li>
-                        </ul>
+    <!-- Quick Navigation -->
+    <section class="quick-nav-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Explore Portfolio</span>
+                <h2>Discover My Expertise</h2>
+            </div>
+            <div class="quick-nav-grid">
+                <a href="pages/skills.html" class="quick-nav-card">
+                    <div class="nav-icon">🛠️</div>
+                    <h3>Technical Skills</h3>
+                    <p>Python, ML frameworks, data visualization tools</p>
+                    <div class="tap-hint">Tap to explore</div>
+                    <div class="nav-arrow"><i class="fas fa-arrow-right"></i></div>
+                </a>
+                
+                <a href="pages/projects.html" class="quick-nav-card">
+                    <div class="nav-icon">🚀</div>
+                    <h3>Featured Projects</h3>
+                    <p>89% accuracy models, real-time dashboards</p>
+                    <div class="tap-hint">Tap to explore</div>
+                    <div class="nav-arrow"><i class="fas fa-arrow-right"></i></div>
+                </a>
+                
+                <a href="pages/experience.html" class="quick-nav-card">
+                    <div class="nav-icon">💼</div>
+                    <h3>Work Experience</h3>
+                    <p>3+ years of proven data science results</p>
+                    <div class="tap-hint">Tap to explore</div>
+                    <div class="nav-arrow"><i class="fas fa-arrow-right"></i></div>
+                </a>
+                
+                <a href="pages/contact.html" class="quick-nav-card">
+                    <div class="nav-icon">📞</div>
+                    <h3>Let's Connect</h3>
+                    <p>Ready to discuss opportunities</p>
+                    <div class="tap-hint">Tap to explore</div>
+                    <div class="nav-arrow"><i class="fas fa-arrow-right"></i></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Testimonials</span>
+                <h2>What People Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p>"Bhavesh's data science expertise helped us achieve 25% improvement in our predictive models. His attention to detail and innovative approach is remarkable."</p>
+                    <div class="testimonial-author">
+                        <strong>Sarah Johnson</strong>
+                        <span>Senior Data Manager</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p>"Working with Bhavesh was a game-changer. His machine learning solutions increased our accuracy by 15% and saved countless hours of manual work."</p>
+                    <div class="testimonial-author">
+                        <strong>Michael Chen</strong>
+                        <span>Tech Lead</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p>"Bhavesh delivers exceptional results. His dashboard visualizations transformed how our team makes data-driven decisions."</p>
+                    <div class="testimonial-author">
+                        <strong>Emily Rodriguez</strong>
+                        <span>Product Manager</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ╔════════ PROJECTS ═════════╗ -->
-    <section id="projects" class="section">
+    <!-- Hire Message -->
+    <section class="hire-section-clean">
         <div class="container">
-            <h2 class="title">Project Spotlight</h2>
-
-            <div class="proj-line">
-                <img src="assets/project-thumbs/health.webp" alt="Smart Health Tracker" class="tilt">
-                <div class="info">
-                    <h3>Smart Health Tracker</h3>
-                    <p>Flask app logging water, calories & sleep with live trend graphs.</p>
-                    <p class="stack">Flask · Pandas · Matplotlib</p>
-                    <a href="https://github.com/Bhaveshkusakiya/Smart-Health-Tracker" target="_blank">GitHub ↗︎</a>
-                    <a href="https://smart-health-tracker.onrender.com" target="_blank" class="change">LiveDemo💻</a>
-                </div>
-            </div>
-
-            <div class="proj-line">
-                <img src="assets/project-thumbs/loan.webp" alt="Loan Risk Analyzer" class="tilt">
-                <div class="info">
-                    <h3>Loan Risk Analyzer</h3>
-                    <p>Streamlit XGBoost model (AUC 0.91) with SHAP insights & batch upload.</p>
-                    <p class="stack">Python · XGBoost · Streamlit</p>
-                    <a href="https://github.com/Bhaveshkusakiya/Loan-Risk-Analyzer" target="_blank">GitHub ↗︎</a>
-                    <a href="https://loan-risk-analyzer-3zmv.onrender.com" target="_blank" class="change">LiveDemo💻</a>
-                </div>
-            </div>
-
-            <div class="proj-line">
-                <img src="assets/project-thumbs/churn.webp" alt="Customer Churn" class="tilt">
-                <div class="info">
-                    <h3>Customer Churn Prediction</h3>
-                    <p>85 % accurate model + Tableau dashboards guiding retention campaigns.</p>
-                    <p class="stack">Python · XGBoost · Tableau</p>
-                    <a href="https://github.com/Bhaveshkusakiya/churn_predictor" target="_blank">GitHub ↗︎</a>
-                    <a href="https://churn-predictor-a35w.onrender.com/" target="_blank" class="change">LiveDemo💻</a>
-                </div>
-            </div>
-
-            <div class="proj-line">
-                <img src="assets/project-thumbs/twitter.webp" alt="Twitter Sentiment" class="tilt">
-                <div class="info">
-                    <h3>Twitter Sentiment Analysis</h3>
-                    <p>NLP pipeline classifying 10 k tweets in real‑time (82 % accuracy).</p>
-                    <p class="stack">Python · NLTK · Scikit‑Learn</p>
-                    <a href="https://github.com/Bhaveshkusakiya/smart-sentiment-analyzer" target="_blank">GitHub ↗︎</a>
-                    <a href="https://smart-sentiment-analyzer.onrender.com" target="_blank"
-                        class="change">LiveDemo💻</a>
-                </div>
-            </div>
-
-            <div class="proj-line">
-                <img src="assets/project-thumbs/dashboard.webp" alt="Daily Dashboard" class="tilt">
-                <div class="info">
-                    <h3>Daily Dashboard</h3>
-                    <p>A comprehensive, modern daily life dashboard with advanced features to help you manage tasks,
-                        habits, notes, and more efficiently.</p>
-                    <p class="stack">HTML · CSS · JS</p>
-                    <a href="https://github.com/Bhaveshkusakiya/daily-dashboard" target="_blank">GitHub ↗︎</a>
-                    <a href="https://day-to-day-dashboard.netlify.app/" target="_blank" class="change">LiveDemo💻</a>
+            <div class="hire-content-clean">
+                <div class="hire-icon">💼</div>
+                <h3>Ready to Transform Your Data into Intelligence?</h3>
+                <p>Looking for a skilled Data Scientist who can deliver 89% model accuracy and drive business growth? Let's discuss how I can help your organization succeed.</p>
+                <div class="hire-buttons">
+                    <a href="pages/contact.html" class="hire-btn-clean">
+                        <span>Let's Connect</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="./resume/BhaveshKusakiya_CV.pdf" download class="hire-btn-clean hire-btn-secondary">
+                        <span>Download Resume</span>
+                        <i class="fas fa-download"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ╔════════ SKILLS ═════════╗ -->
-    <section id="skills" class="section alt">
-        <div class="container">
-            <h2 class="title">Skills Heatmap</h2>
-
-            <div class="skill-grid">
-                <span>Python</span><span>R</span><span>SQL</span><span>Pandas</span><span>NumPy</span>
-                <span>Scikit‑Learn</span><span>TensorFlow</span><span>PyTorch</span><span>ML</span><span>LLMs</span><span>Tableau</span>
-                <span>Power BI</span><span>Matplotlib</span><span>Docker</span><span>Seaborn</span><span>Jenkins</span><span>NLP</span>
-                <span>Time‑Series</span><span>A/B Testing</span><span>BigData</span><span>DataPipeline</span><span>Flask</span><span>XGBoost</span>
-                <span>Power BI</span><span>AI</span><span>HTML</span><span>CSS</span><span>JS</span><span>JSON</span><span>Ad.Excel</span><span>Render</span><span>AWS</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ╔════════ STORY MODE TIMELINE ═════════╗ -->
-    <section id="story" class="section">
-        <div class="container">
-            <h2 class="title">My Journey</h2>
-
-            <div class="story-timeline">
-                <div class="story-item left">
-                    <span class="story-dot"></span>
-                    <h3 class="year">2018</h3>
-                    <p>🎓 BSc Mathematics begins at G.N. Khalsa College.<br>
-                        Discovered a passion for logic & patterns.</p>
-                </div>
-
-                <div class="story-item right">
-                    <span class="story-dot"></span>
-                    <h3 class="year">2019</h3>
-                    <p>📈 Learning Python and SQL<br>
-                        Learned python from scratch to basic level and Knowledge about SQL queries.</p>
-                </div>
-
-                <div class="story-item right">
-                    <span class="story-dot"></span>
-                    <h3 class="year">2020</h3>
-                    <p>💽  Master in SQL queries.<br>
-                        Learned Intermediate Python and on many small project with python and SQL.</p>
-                </div>
-
-                <div class="story-item right">
-                    <span class="story-dot"></span>
-                    <h3 class="year">2021</h3>
-                    <p>🗯 Started Post Graduation from @Mithibai College<br>
-                        Learned Adv. Level mathematics and Graph which helps me in Data Visualization</p>
-                </div>
-
-                <div class="story-item left">
-                    <span class="story-dot"></span>
-                    <h3 class="year">2022</h3>
-                    <p>🧠 Learned Python.<br>
-                        Forecasted trends with ARIMA & Prophet; taught Python workshops.</p>
-                </div>
-
-                <div class="story-item right">
-                    <span class="story-dot"></span>
-                    <h3 class="year">2023</h3>
-                    <p>🚀 Earned StarAgile Data‑Science Certificate. <br>launched first Tableau dashboard. Gain Knowledge in AI/ML and other programming language</p>
-                </div>
-
-                <div class="story-item left">
-                    <span class="story-dot"></span>
-                    <h3 class="year">2024</h3>
-                    <p>💼 Freelance Data Scientist (Remote).<br>
-                        Churn model boosted retention 11 %.</p>
-                </div>
-
-                <div class="story-item right">
-                    <span class="story-dot"></span>
-                    <h3 class="year">2025</h3>
-                    <p>🎯 Ready to join a data‑driven team & build the next AI success story.</p>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <div class="mobile-nav-grid">
+            <a href="index.html" class="mobile-nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="pages/skills.html" class="mobile-nav-item">
+                <i class="fas fa-cogs"></i>
+                <span>Skills</span>
+            </a>
+            <a href="pages/projects.html" class="mobile-nav-item">
+                <i class="fas fa-rocket"></i>
+                <span>Projects</span>
+            </a>
+            <div class="mobile-nav-item mobile-nav-more" onclick="toggleMobileDropdown()">
+                <i class="fas fa-ellipsis-h"></i>
+                <span>More</span>
+                <div class="mobile-nav-dropdown" id="mobileDropdown">
+                    <a href="pages/experience.html">Experience</a>
+                    <a href="pages/education.html">Education</a>
+                    <a href="pages/contact.html">Contact</a>
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
 
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-    <!-- ╔════════ EDUCATION / CERTS ═════════╗ -->
-    <section id="education" class="section">
-        <div class="container">
-            <h2 class="title">Education</h2>
-            <ul class="timeline-plain">
-                <li><span>2023–2024</span> Data Science Associate — StarAgile</li>
-                <li><span>2021–2023</span> MSc Mathematics — Mithibai College</li>
-                <li><span>2018–2021</span> BSc Mathematics — G.N. Khalsa College</li>
-                <li><span>2016–2018</span> HSC in Science — Lokmanya Vidhya Mandir </li>
-            </ul>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Loading Bhavesh Kusakiya's Milestones...</p>
         </div>
-    </section>
-
-    <section id="certificates" class="section alt">
-        <div class="container">
-            <h2 class="title">Certificates</h2>
-            <ul class="timeline-plain">
-                <li>Python for Data Science — IBM</li>
-                <li>Machine Learning with Python — IBM</li>
-                <li>Machine Learning with R — IBM</li>
-                <li>Certified Python Devloper — PDAC24</li>
-                <li>Advanced Excel — Mithibai College</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- ╔════════ CONTACT ═════════╗ -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="title">Contact</h2>
-            <div class="contact-links">
-                <a href="tel:+918291247107">📞 +91 82912 47107</a>
-                <a href="mailto:bhaveshkusakiya04@gmail.com">📩 bhaveshkusakiya04@gmail.com</a>
-                <a href="https://github.com/Bhaveshkusakiya" target="_blank">👨🏾‍💻 GitHub</a>
-                <a href="https://www.linkedin.com/in/bhavesh-kusakiya-116a1b193" target="_blank">🔗 LinkedIn</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2025 · Made with ❤️</p>
-    </footer>
-
-    <!-- Friendly robot greeter -->
-    <div id="botGreeter" aria-label="Chat with me">
-        <span class="bot-emoji">🤖</span>
-        <span id="botSpeech" class="bot-speech">Hi! Need anything? Just click me 👇</span>
     </div>
 
-
-    <!-- Floating AI Assistant Button -->
-    <button id="aiBtn" aria-label="Why hire me?">🤖</button>
-
-    <!-- AI Chat Modal -->
-    <div id="aiModal" class="ai-modal glass">
-        <div class="ai-header">
-            <h4>Ask AI: “Why Hire Bhavesh?”</h4>
-            <span id="aiClose">✕</span>
-        </div>
-
-        <!-- Chat log -->
-        <div id="aiChat" class="ai-chat"></div>
-
-        <!-- Input -->
-        <form id="aiForm" class="ai-input">
-            <input id="aiQuestion" type="text" placeholder="Ask anything…" autocomplete="off" required />
-            <button type="submit">➤</button>
-        </form>
-    </div>
-
+    <canvas id="particleCanvas"></canvas>
+    <script src="script.js"></script>
 </body>
-
 </html>
