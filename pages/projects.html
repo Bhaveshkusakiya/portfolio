@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Bhavesh Kusakiya</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="clean-theme">
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">BK</div>
+                <div class="hamburger" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="../index.html" onclick="closeMobileMenu()">Home</a></li>
+                    <li><a href="about.html" onclick="closeMobileMenu()">About</a></li>
+                    <li><a href="skills.html" onclick="closeMobileMenu()">Skills</a></li>
+                    <li><a href="experience.html" onclick="closeMobileMenu()">Experience</a></li>
+                    <li><a href="projects.html" onclick="closeMobileMenu()">Projects</a></li>
+                    <li><a href="education.html" onclick="closeMobileMenu()">Education</a></li>
+                    <li><a href="contact.html" onclick="closeMobileMenu()">Let's Connect</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="ai-features">
+        <div class="container">
+            <h2 class="section-title">AI-Era Ready Features</h2>
+            <div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Neural Networks</h3>
+                    <p>Advanced deep learning with TensorFlow & PyTorch for complex pattern recognition and predictive modeling</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fas fa-robot"></i></div>
+                    <h3>MLOps Pipeline</h3>
+                    <p>End-to-end ML pipeline automation with Docker, Jenkins, and cloud deployment for scalable AI solutions</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fas fa-eye"></i></div>
+                    <h3>Computer Vision</h3>
+                    <p>Image processing and analysis capabilities using OpenCV and deep learning for visual intelligence</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fas fa-comments"></i></div>
+                    <h3>NLP & LLMs</h3>
+                    <p>Natural language processing with transformer models and large language model integration</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Real-time Analytics</h3>
+                    <p>Live data streaming and real-time model inference for instant business insights and decisions</p>
+                </div>
+                <div class="ai-card">
+                    <div class="ai-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud AI Services</h3>
+                    <p>AWS, Azure, and GCP AI services integration for enterprise-scale machine learning solutions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Loan Risk Analyzer</h3>
+                        <p>89% Accuracy • 0.91 AUC</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Built classification model using logistic regression and XGBoost to predict loan defaults. Preprocessed real-world loan data, handled missing values, and performed feature engineering.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">Feature Engineering</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn" onclick="showProjectDemo('loan')">📊 View Demo</button>
+                            <a href="https://loan-risk-analyzer-3zmv.onrender.com/" target="_blank"> 
+                                <button class="action-btn live-demo-btn">🚀 Live Demo</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Customer Churn Prediction</h3>
+                        <p>85% Accuracy • Tableau Viz</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Developed churn prediction model using Random Forest and XGBoost. Applied hyperparameter tuning and cross-validation. Visualized key churn factors using Tableau.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Random Forest</span>
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">Tableau</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn" onclick="showProjectDemo('churn')">📊 View Demo</button>
+                            <a href="https://churn-predictor-a35w.onrender.com/" target="_blank">
+                                 <button class="action-btn live-demo-btn">🚀 Live Demo</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Twitter Sentiment Analysis</h3>
+                        <p>10K+ Tweets • NLP</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Collected and preprocessed Twitter data. Implemented NLP techniques with Logistic Regression and Naive Bayes for sentiment classification. Visualized trends with Matplotlib.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Logistic Regression</span>
+                            <span class="tech-tag">Naive Bayes</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn" onclick="showProjectDemo('sentiment')">📊 View Demo</button>
+                            <a href="https://smart-sentiment-analyzer.onrender.com/" target="_blank">
+                                <button class="action-btn live-demo-btn">🚀 Live Demo</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Daily Dashboard</h3>
+                        <p>Responsive Dash • JS</p>
+                    </div>
+                    <div class="project-content">
+                        <p>A comprehensive, modern daily life dashboard with advanced features to help you manage tasks, habits, notes, and more efficiently.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JS</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn" onclick="showProjectDemo('forecasting')">📊 View Demo</button>
+                            <a href="https://day-to-day-dashboard.netlify.app/" target="_blank">
+                                <button class="action-btn live-demo-btn">🚀 Live Demo</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Smart Health Tracker</h3>
+                        <p>Dashboard • Health Analytics</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Developed health dashboard tracking water intake, calories, and sleep hours. Visualized user data with Matplotlib and Seaborn for trend analysis.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Dashboard</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn" onclick="showProjectDemo('health')">📊 View Demo</button>
+                            <a href="https://smart-health-tracker.onrender.com/" target="_blank">
+                                <button class="action-btn live-demo-btn">🚀 Live Demo</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Streamlit - Dashboard</h3>
+                        <p>SalesData • Power BI</p>
+                    </div>
+                    <div class="project-content">
+                        <p>Build Streamlit Dashboard from Salesdata and Develop Power BI responsive and interactive View</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">sns</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="action-btn" onclick="showProjectDemo('health')">📊 View Demo</button>
+                            <a href="https://sales-dashboard-data.streamlit.app/" target="_blank">
+                                <button class="action-btn live-demo-btn">🚀 Live Demo</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('projectModal')">&times;</span>
+            <div id="projectContent"></div>
+        </div>
+    </div>
+
+    <!-- Hire Message -->
+    <section class="hire-section">
+        <div class="container">
+            <div class="hire-content">
+                <h3>🚀 Impressed by These Projects?</h3>
+                <p>From 89% accuracy ML models to real-time dashboards, I deliver end-to-end solutions. Ready to build something amazing together?</p>
+                <a href="contact.html" class="hire-btn">
+                    <span>Let's Connect</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <div class="mobile-nav-grid">
+            <a href="../index.html" class="mobile-nav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="about.html" class="mobile-nav-item">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+            <a href="skills.html" class="mobile-nav-item">
+                <i class="fas fa-cogs"></i>
+                <span>Skills</span>
+            </a>
+            <div class="mobile-nav-item mobile-nav-more" onclick="toggleMobileDropdown()">
+                <i class="fas fa-ellipsis-h"></i>
+                <span>More</span>
+                <div class="mobile-nav-dropdown" id="mobileDropdown">
+                    <a href="experience.html">Experience</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="education.html">Education</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <canvas id="particleCanvas"></canvas>
+    <script src="../script.js"></script>
+</body>
+</html>
