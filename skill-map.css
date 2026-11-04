@@ -1,0 +1,338 @@
+/* Interactive skill map: a knowledge graph on wide screens, a grouped list on smaller ones */
+
+.skill-explorer {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: clamp(28px, 4vw, 56px);
+    align-items: start;
+}
+
+.skill-graph-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+}
+
+.skill-graph-lines {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.skill-graph-lines line {
+    stroke: var(--border-strong);
+    stroke-width: 1px;
+    vector-effect: non-scaling-stroke;
+    transition: stroke 0.25s ease;
+}
+
+.skill-graph-lines line.is-active {
+    stroke: var(--accent);
+}
+
+.skill-graph-nodes {
+    position: absolute;
+    inset: 0;
+}
+
+.sg-node {
+    position: absolute;
+    translate: -50% -50%;
+    max-width: 128px;
+    padding: 9px 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--ink);
+    font: 600 0.84rem/1.2 var(--font-body);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, scale 0.2s ease;
+}
+
+.sg-node:hover,
+.sg-node:focus-visible {
+    border-color: var(--ink);
+}
+
+.sg-center {
+    z-index: 3;
+    width: 104px;
+    height: 104px;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+    font-size: 0.92rem;
+}
+
+.sg-center:hover,
+.sg-center:focus-visible {
+    border-color: var(--accent);
+}
+
+.sg-hub {
+    z-index: 2;
+}
+
+.sg-hub[aria-pressed="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+}
+
+.sg-skill {
+    z-index: 1;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    overflow: visible;
+    border: 3px solid var(--accent);
+    background: var(--surface);
+}
+
+.sg-skill.is-related {
+    background: var(--accent-soft);
+}
+
+.sg-skill.is-selected {
+    background: var(--accent);
+    scale: 1.3;
+}
+
+.sg-label {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    translate: -50% 0;
+    padding: 4px 9px;
+    border-radius: 6px;
+    background: var(--ink);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.sg-skill:hover .sg-label,
+.sg-skill:focus-visible .sg-label,
+.sg-skill.is-selected .sg-label {
+    opacity: 1;
+}
+
+.sg-enter {
+    animation: sg-in 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+}
+
+@keyframes sg-in {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+/* Detail panel */
+.skill-detail {
+    min-height: 340px;
+    padding: 30px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.skill-detail.is-updated {
+    animation: sd-in 0.35s ease both;
+}
+
+@keyframes sd-in {
+    from {
+        opacity: 0;
+        translate: 0 6px;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+.skill-detail h3 {
+    margin: 0 0 6px;
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.skill-detail h4 {
+    margin: 26px 0 10px;
+    color: var(--ink);
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.skill-detail p {
+    margin: 0 0 4px;
+    color: var(--muted);
+}
+
+.skill-detail .skill-meta {
+    color: var(--accent-ink);
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.skill-detail .skill-summary {
+    margin-top: 16px;
+}
+
+.skill-detail-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.skill-detail .skill-back {
+    margin-top: 26px;
+}
+
+/* Shared chips */
+.chip {
+    padding: 7px 13px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface-muted);
+    color: var(--ink);
+    font: 500 0.9rem/1.3 var(--font-body);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.chip:hover,
+.chip:focus-visible {
+    border-color: var(--ink);
+}
+
+.chip[aria-pressed="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #fff;
+}
+
+/* Grouped list used on smaller screens */
+.skill-tree {
+    display: none;
+}
+
+.skill-group {
+    border-bottom: 1px solid var(--border);
+}
+
+.skill-group:first-child {
+    border-top: 1px solid var(--border);
+}
+
+.skill-group summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 58px;
+    color: var(--ink);
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+.skill-group summary::-webkit-details-marker {
+    display: none;
+}
+
+.skill-group summary::after {
+    content: "+";
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.skill-group[open] summary::after {
+    content: "\2212";
+}
+
+.skill-count {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.skill-group ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0 0 22px;
+    list-style: none;
+}
+
+.skill-hint {
+    margin: 28px 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 1023px) {
+    .skill-explorer {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .skill-graph-wrap {
+        display: none;
+    }
+
+    .skill-tree {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .skill-detail {
+        min-height: 0;
+        padding: 22px;
+    }
+
+    .skill-detail h3 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sg-enter,
+    .skill-detail.is-updated {
+        animation: none;
+    }
+
+    .sg-node,
+    .sg-label {
+        transition: none;
+    }
+}
