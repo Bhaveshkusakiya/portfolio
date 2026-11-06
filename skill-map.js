@@ -154,24 +154,50 @@
         if (!open) return;
 
         const names = open.category.skills;
-        const step = names.length > 1 ? Math.min(LEAF_STEP, LEAF_SPREAD / (names.length - 1)) : 0;
         names.forEach((name, index) => {
-            const angle = open.angle + (index - (names.length - 1) / 2) * step;
-            const pos = polar(open.pos.x, open.pos.y, LEAF_RADIUS, angle);
-            addLine(open.pos.x, open.pos.y, pos.x, pos.y, state.skill === name);
+            const pos = leafPos(open.category, index);
+            const isSelected = state.skill === name;
+            addLine(open.pos.x, open.pos.y, pos.x, pos.y, isSelected);
 
             const classes = ["sg-node", "sg-skill"];
             if (animate) classes.push("sg-enter");
-            if (state.skill === name) classes.push("is-selected");
+            if (isSelected) classes.push("is-selected");
             else if (related.has(name)) classes.push("is-related");
 
-            const node = el("button", { type: "button", class: classes.join(" "), "aria-label": name, "aria-pressed": String(state.skill === name) });
+            const node = el("button", { type: "button", class: classes.join(" "), "aria-label": name, "aria-pressed": String(isSelected) });
             node.style.animationDelay = `${index * 30}ms`;
-            node.appendChild(el("span", { class: "sg-label" }, name));
             place(node, pos);
+            node.addEventListener("mouseenter", () => showTip(name, pos));
+            node.addEventListener("focus", () => showTip(name, pos));
+            node.addEventListener("mouseleave", refreshTip);
+            node.addEventListener("blur", refreshTip);
             node.addEventListener("click", () => selectSkill(name));
             graph.appendChild(node);
         });
+        refreshTip();
+    }
+
+    function leafPos(category, index) {
+        const hubIndex = CATEGORIES.indexOf(category);
+        const hubAngle = -Math.PI / 2 + (hubIndex * 2 * Math.PI) / CATEGORIES.length;
+        const hub = polar(50, 50, HUB_RADIUS, hubAngle);
+        const radius = index % 2 === 0 ? LEAF_RADIUS : LEAF_RADIUS + 6;
+        const angle = hubAngle + (index - (category.skills.length - 1) / 2) * LEAF_STEP;
+        return polar(hub.x, hub.y, radius, angle);
+    }
+
+    function showTip(name, pos) {
+        graph.querySelectorAll(".sg-tip").forEach((node) => node.remove());
+        const tip = el("div", { class: "sg-tip" }, name);
+        place(tip, pos);
+        graph.appendChild(tip);
+    }
+
+    function refreshTip() {
+        graph.querySelectorAll(".sg-tip").forEach((node) => node.remove());
+        if (!state.skill) return;
+        const category = categoryOf.get(state.skill);
+        showTip(state.skill, leafPos(category, category.skills.indexOf(state.skill)));
     }
 
     function buildTree() {
